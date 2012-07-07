@@ -101,6 +101,14 @@ Client.prototype.State = function(state) {
   return _sendMessage.call(this, { states: [state] });
 };
 
+/* Submits a Query to the server.
+   takes a string
+ */
+Client.prototype.Query = function(query) {
+  return _sendMessage.call(this, {query: { string: [query] }});
+};
+
+
 
 /* sends a payload to Riemann. Exepects any valid payload type
    (eg: Event, State, Query...) and an optional (requested, not guaranteed)
